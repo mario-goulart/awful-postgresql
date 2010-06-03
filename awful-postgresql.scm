@@ -11,8 +11,11 @@
 
   (db-disconnect disconnect)
 
-  (db-inquirer (lambda (q #!key default)
-                 (let ((result (query* (db-connection) q)))
+  (db-inquirer (lambda (q #!key default values)
+                 (let ((result
+                        (if values
+                            (query* (db-connection) q values)
+                            (query* (db-connection) q))))
                    (if (zero? (row-count result))
                        default
                        (row-map identity result)))))
