@@ -1,0 +1,10 @@
+;;; awful-postgresql.meta -*- scheme -*-
+
+((egg "awful-postgresql.egg")
+ (synopsis "Postgresql support for awful")
+ (author "<a href=\"http://chicken.wiki.br/users/mario-domenech-goulart\">Mario Domenech Goulart</a>")
+ (license "BSD")
+ (category web)
+ (depends (awful "0.10") postgresql)
+ (files "awful-postgresql.scm" "awful-postgresql.setup" "awful-postgresql.html"))
+
