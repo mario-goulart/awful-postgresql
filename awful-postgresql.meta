@@ -5,6 +5,5 @@
  (author "<a href=\"http://wiki.call-cc.org/users/mario-domenech-goulart\">Mario Domenech Goulart</a>")
  (license "BSD")
  (category web)
- (depends (awful "0.10") postgresql)
- (files "awful-postgresql.scm" "awful-postgresql.setup" "awful-postgresql.html"))
+ (depends (awful "0.10") postgresql))
 
