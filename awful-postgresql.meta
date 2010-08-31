@@ -2,7 +2,7 @@
 
 ((egg "awful-postgresql.egg")
  (synopsis "Postgresql support for awful")
- (author "<a href=\"http://chicken.wiki.br/users/mario-domenech-goulart\">Mario Domenech Goulart</a>")
+ (author "<a href=\"http://wiki.call-cc.org/users/mario-domenech-goulart\">Mario Domenech Goulart</a>")
  (license "BSD")
  (category web)
  (depends (awful "0.10") postgresql)
