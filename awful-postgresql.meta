@@ -6,5 +6,5 @@
  (license "BSD")
  (category web)
  (depends (awful "0.10") postgresql)
- (files "awful-postgresql.scm" "awful-postgresql.setup" "awful-postgresql.html"))
+ (files "awful-postgresql.scm" "awful-postgresql.meta" "awful-postgresql.setup"))
 
