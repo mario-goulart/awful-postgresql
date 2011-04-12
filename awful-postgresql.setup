@@ -1,8 +1,8 @@
 ;;; awful-postgresql.setup -*- scheme -*-
 
-(compile -s -O2 -d1 -j awful-postgresql awful-postgresql.scm)
-(compile -s -O2 -d1 awful-postgresql.import.scm)
+(compile -s -O3 -d1 -j awful-postgresql awful-postgresql.scm)
+(compile -s -O3 -d1 awful-postgresql.import.scm)
 
 (install-extension 'awful-postgresql
                    '("awful-postgresql.so" "awful-postgresql.import.so")
-                   '((version 0.3)))
+                   '((version 0.4)))

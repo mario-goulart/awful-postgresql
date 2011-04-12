@@ -1,9 +1,12 @@
-(module awful-postgresql (enable-db)
+(module awful-postgresql (enable-db switch-to-postgresql-database)
 
 (import chicken scheme data-structures)
 (use awful postgresql)
 
 (define (enable-db . ignore) ;; backward compatibility: `enable-db' was a parameter
+  (switch-to-postgresql-database))
+
+(define (switch-to-postgresql-database)
 
   (db-enabled? #t)
 
