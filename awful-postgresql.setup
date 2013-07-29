@@ -5,4 +5,4 @@
 
 (install-extension 'awful-postgresql
                    '("awful-postgresql.so" "awful-postgresql.import.so")
-                   '((version 0.4)))
+                   '((version 0.5)))

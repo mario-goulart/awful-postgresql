@@ -6,3 +6,4 @@
 (release "0.2" old-uri)
 (release "0.3" old-uri)
 (release "0.4" old-uri)
+(release "0.5")
