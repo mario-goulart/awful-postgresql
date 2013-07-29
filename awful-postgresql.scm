@@ -27,6 +27,7 @@
                        default
                        (db-result-processor result)))))
 
+  ;; Deprecated
   (sql-quoter (lambda (data)
                 (++ "'" (escape-string (db-connection) (concat data)) "'")))
 
