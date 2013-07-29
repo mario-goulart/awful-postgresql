@@ -1,10 +1,14 @@
-(module awful-postgresql (enable-db switch-to-postgresql-database)
+(module awful-postgresql (enable-db switch-to-postgresql-database db-result-processor)
 
 (import chicken scheme data-structures)
 (use awful postgresql)
 
 (define (enable-db . ignore) ;; backward compatibility: `enable-db' was a parameter
   (switch-to-postgresql-database))
+
+(define db-result-processor
+  (make-parameter (lambda (result)
+                       (row-map identity result))))
 
 (define (switch-to-postgresql-database)
 
@@ -21,7 +25,7 @@
                             (query* (db-connection) q))))
                    (if (zero? (row-count result))
                        default
-                       (row-map identity result)))))
+                       (db-result-processor result)))))
 
   (sql-quoter (lambda (data)
                 (++ "'" (escape-string (db-connection) (concat data)) "'")))
