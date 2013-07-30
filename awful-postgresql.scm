@@ -25,7 +25,7 @@
                             (query* (db-connection) q))))
                    (if (zero? (row-count result))
                        default
-                       (db-result-processor result)))))
+                       ((db-result-processor) result)))))
 
   ;; Deprecated
   (sql-quoter (lambda (data)
