@@ -18,7 +18,7 @@
 
   (db-disconnect disconnect)
 
-  (db-inquirer (lambda (q #!key default values)
+  (db-inquirer (lambda (q #!key (default '()) values)
                  (let ((result
                         (if values
                             (query* (db-connection) q values)
