@@ -21,8 +21,11 @@
   (db-inquirer (lambda (q #!key (default '()) values)
                  (let ((result
                         (if values
-                            (query* (db-connection) q values)
-                            (query* (db-connection) q))))
+                            (query* (db-connection)
+                                    ((db-query-transformer) q)
+                                    values)
+                            (query* (db-connection)
+                                    ((db-query-transformer) q)))))
                    (if (zero? (row-count result))
                        default
                        ((db-result-processor) result)))))
@@ -32,7 +35,8 @@
                 (++ "'" (escape-string (db-connection) (concat data)) "'")))
 
   (db-make-row-obj (lambda (q)
-                     (let ((result (row-alist (query* (db-connection) q))))
+                     (let ((result (row-alist (query* (db-connection)
+                                                      ((db-query-transformer) q)))))
                        (lambda (field #!optional default)
                          (or (alist-ref field result)
                              default)))))
