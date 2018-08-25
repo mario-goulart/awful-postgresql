@@ -1,0 +1,11 @@
+;;; awful-postgresql.egg -*- scheme -*-
+
+((synopsis "Postgresql support for awful")
+ (author "Mario Domenech Goulart")
+ (license "BSD")
+ (category web)
+ (dependencies awful postgresql)
+ (component-options
+  (csc-options "-O3" "-d1"))
+ (components
+  (extension awful-postgresql)))

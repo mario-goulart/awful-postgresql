@@ -1,7 +1,15 @@
 (module awful-postgresql (enable-db switch-to-postgresql-database db-result-processor)
 
-(import chicken scheme data-structures)
-(use awful postgresql)
+(import scheme)
+(cond-expand
+  (chicken-4
+   (import chicken data-structures)
+   (use awful postgresql))
+  (chicken-5
+   (import (chicken base))
+   (import awful postgresql))
+  (else
+   (error "Unsupported CHICKEN version.")))
 
 (define (enable-db . ignore) ;; backward compatibility: `enable-db' was a parameter
   (switch-to-postgresql-database))
