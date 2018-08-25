@@ -1,0 +1,7 @@
+awful-postgresql.build.sh
+awful-postgresql.import.scm
+awful-postgresql.import.so
+awful-postgresql.install.sh
+awful-postgresql.link
+awful-postgresql.so
+awful-postgresql.static.o
