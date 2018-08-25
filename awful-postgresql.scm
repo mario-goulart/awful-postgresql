@@ -38,10 +38,6 @@
                        default
                        ((db-result-processor) result)))))
 
-  ;; Deprecated
-  (sql-quoter (lambda (data)
-                (++ "'" (escape-string (db-connection) (concat data)) "'")))
-
   (db-make-row-obj (lambda (q)
                      (let ((result (row-alist (query* (db-connection)
                                                       ((db-query-transformer) q)))))
